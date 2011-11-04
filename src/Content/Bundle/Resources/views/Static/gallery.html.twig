@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+  {{parent()}} - Gallery
+{% endblock %}
+ {% block body %}
+     {% for i in 0..15 %}
+        {% if not i % 4 %}
+          <div class="row {% if not i % 8 %}odd{% else %}even{%endif%}">
+        {% endif %}
+              <div class="image {% if not i % 2 %}odd{% else %}even{%endif%}">
+                <img src="{{ asset('bundles/content/images/bug-in-glass.png') }}" />
+              </div>
+        {% if i % 4 == 3 %}
+              <div class="cb"></div>
+          </div>
+        {% endif %}
+     {% endfor %}
+ {% endblock %}

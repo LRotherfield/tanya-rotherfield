@@ -1,0 +1,19 @@
+/* 
+    Document   : static.css
+    Created on : 04-Nov-2011, 21:35:52
+    Author     : luke
+    Description:
+        Css styles for static bundle
+*/
+
+body {font-family: 'Petrona', serif;}
+.cb {clear: both;}
+div.wrapper{width: 960px;margin: auto;}
+
+div.row {margin: auto; width: 800px;}
+div.image{float: left; padding: 20px; width: 160px; height: 160px;}
+div.row.odd div.image.odd {background: #BCD4E6;}
+div.row.odd div.image.even {background: #CCE4F6;}
+div.row.even div.image.odd {background: #CCE4F6;}
+div.row.even div.image.even {background: #BCD4E6;}
+
