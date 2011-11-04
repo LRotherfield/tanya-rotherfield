@@ -56,9 +56,13 @@ class __TwigTemplate_7a6269bc475707dff90eca0510361cf8 extends Twig_Template
         // line 23
         $this->displayBlock('body', $context, $blocks);
         // line 24
-        echo "      ";
+        echo "        <div class=\"footer\">
+          <a href=\"mailto:tanya@tanyarotherfield.co.uk\">Email Tanya</a>
+        </div>
+      ";
+        // line 27
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 25
+        // line 28
         echo "    </div>
   </body>
 </html>
@@ -102,7 +106,7 @@ class __TwigTemplate_7a6269bc475707dff90eca0510361cf8 extends Twig_Template
     {
     }
 
-    // line 24
+    // line 27
     public function block_javascripts($context, array $blocks = array())
     {
     }
