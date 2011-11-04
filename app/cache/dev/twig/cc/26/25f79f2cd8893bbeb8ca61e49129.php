@@ -78,7 +78,11 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
             echo "\">
                 <img src=\"";
             // line 11
-            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/images/bug-in-glass.png"), "html");
+            if ((!($this->getContext($context, 'i') % 2))) {
+                echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/images/bug-in-glass.png"), "html");
+            } else {
+                echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/images/bug-house.png"), "html");
+            }
             echo "\" />
               </div>
         ";

@@ -8,7 +8,7 @@
           <div class="row {% if not i % 8 %}odd{% else %}even{%endif%}">
         {% endif %}
               <div class="image {% if not i % 2 %}odd{% else %}even{%endif%}">
-                <img src="{{ asset('bundles/content/images/bug-in-glass.png') }}" />
+                <img src="{% if not i % 2 %}{{ asset('bundles/content/images/bug-in-glass.png') }}{% else %}{{ asset('bundles/content/images/bug-house.png') }}{%endif%}" />
               </div>
         {% if i % 4 == 3 %}
               <div class="cb"></div>
