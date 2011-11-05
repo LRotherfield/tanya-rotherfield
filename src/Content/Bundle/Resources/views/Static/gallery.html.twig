@@ -2,6 +2,14 @@
 {% block title %}
   {{parent()}} - Gallery
 {% endblock %}
+ {% block head_javascripts %}
+  {{parent()}}
+  <script type="text/javascript" src="{{ asset('bundles/content/js/jquery.fancybox.js') }}" ></script>
+ {% endblock %}
+ {% block stylesheets %}
+   {{parent()}}
+   <link href="{{ asset('bundles/content/css/jquery.fancybox.css') }}" type="text/css" rel="stylesheet" />
+ {% endblock %}
  {% block body %}
       {% set i = 0 %}
      {% for image in images %}
@@ -9,7 +17,9 @@
           <div class="row {% if not i % 8 %}odd{% else %}even{%endif%}">
         {% endif %}
               <div class="image {% if not i % 2 %}odd{% else %}even{%endif%}">
-                <img src="{{ asset('bundles/content/images/'~image~'-THUMB.png') }}" />
+                <a href="{{ asset('bundles/content/images/'~image~'-LARGE.png') }}" class="image">
+                  <img src="{{ asset('bundles/content/images/'~image~'-THUMB.png') }}" />
+                </a>
               </div>
         {% if i % 4 == 3 %}
               <div class="cb"></div>
@@ -18,3 +28,11 @@
         {% set i = 1+i %}
      {% endfor %}
  {% endblock %}
+{% block javascripts %}
+  {{parent()}}
+   <script type="text/javascript">
+     $(document).ready(function() {
+      $("a.image").fancybox();
+     });  
+   </script>
+{% endblock %}

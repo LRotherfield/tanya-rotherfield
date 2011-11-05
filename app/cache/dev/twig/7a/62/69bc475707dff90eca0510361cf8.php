@@ -34,10 +34,10 @@ class __TwigTemplate_7a6269bc475707dff90eca0510361cf8 extends Twig_Template
         ";
         // line 6
         $this->displayBlock('head_javascripts', $context, $blocks);
-        // line 9
+        // line 13
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 12
+        // line 17
         echo "    <link rel=\"shortcut icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html");
         echo "\" />
@@ -60,22 +60,22 @@ class __TwigTemplate_7a6269bc475707dff90eca0510361cf8 extends Twig_Template
       <div class=\"header\">
         <h1>
           ";
-        // line 31
+        // line 36
         $this->displayBlock('header_text', $context, $blocks);
-        // line 34
+        // line 39
         echo "        </h1>
       </div>
       ";
-        // line 36
+        // line 41
         $this->displayBlock('body', $context, $blocks);
-        // line 37
+        // line 42
         echo "        <div class=\"footer\">
           <a href=\"mailto:tanya@tanyarotherfield.co.uk\">Email Tanya</a>
         </div>
       ";
-        // line 40
+        // line 45
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 41
+        // line 46
         echo "    </div>
   </body>
 </html>
@@ -92,34 +92,40 @@ class __TwigTemplate_7a6269bc475707dff90eca0510361cf8 extends Twig_Template
     public function block_head_javascripts($context, array $blocks = array())
     {
         // line 7
-        echo "          <link href='http://fonts.googleapis.com/css?family=Petrona' rel='stylesheet' type='text/css'>
+        echo "          <script type=\"text/javascript\" src=\"http://www.google.com/jsapi\"></script>
+          <script type=\"text/javascript\">
+              google.load(\"jquery\", \"1\");
+              google.load(\"jqueryui\", \"1\");
+          </script>          
         ";
     }
 
-    // line 9
+    // line 13
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 10
-        echo "           <link href=\"";
+        // line 14
+        echo "          <link href='http://fonts.googleapis.com/css?family=Petrona' rel='stylesheet' type='text/css'>
+          <link href=\"";
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/css/static.css"), "html");
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
         ";
     }
 
-    // line 31
+    // line 36
     public function block_header_text($context, array $blocks = array())
     {
-        // line 32
+        // line 37
         echo "             Tanya Rotherfield - Fine Art
           ";
     }
 
-    // line 36
+    // line 41
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 40
+    // line 45
     public function block_javascripts($context, array $blocks = array())
     {
     }

@@ -4,10 +4,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{% block title %}Tanya Rotherfield{% endblock %}</title>
         {% block head_javascripts %}
-          <link href='http://fonts.googleapis.com/css?family=Petrona' rel='stylesheet' type='text/css'>
+          <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+          <script type="text/javascript">
+              google.load("jquery", "1");
+              google.load("jqueryui", "1");
+          </script>          
         {% endblock %}
         {% block stylesheets %}
-           <link href="{{ asset('bundles/content/css/static.css') }}" type="text/css" rel="stylesheet" />
+          <link href='http://fonts.googleapis.com/css?family=Petrona' rel='stylesheet' type='text/css'>
+          <link href="{{ asset('bundles/content/css/static.css') }}" type="text/css" rel="stylesheet" />
         {% endblock %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     <script type="text/javascript">

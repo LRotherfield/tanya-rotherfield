@@ -12,7 +12,10 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
         $this->parent = array();
         $this->blocks = array(
             'title' => array($this, 'block_title'),
+            'head_javascripts' => array($this, 'block_head_javascripts'),
+            'stylesheets' => array($this, 'block_stylesheets'),
             'body' => array($this, 'block_body'),
+            'javascripts' => array($this, 'block_javascripts'),
         );
     }
 
@@ -48,20 +51,48 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
     }
 
     // line 5
-    public function block_body($context, array $blocks = array())
+    public function block_head_javascripts($context, array $blocks = array())
     {
         // line 6
+        echo "  ";
+        echo $this->renderParentBlock("head_javascripts", $context, $blocks);
+        echo "
+  <script type=\"text/javascript\" src=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/js/jquery.fancybox.js"), "html");
+        echo "\" ></script>
+ ";
+    }
+
+    // line 9
+    public function block_stylesheets($context, array $blocks = array())
+    {
+        // line 10
+        echo "   ";
+        echo $this->renderParentBlock("stylesheets", $context, $blocks);
+        echo "
+   <link href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/css/jquery.fancybox.css"), "html");
+        echo "\" type=\"text/css\" rel=\"stylesheet\" />
+ ";
+    }
+
+    // line 13
+    public function block_body($context, array $blocks = array())
+    {
+        // line 14
         echo "      ";
         $context['i'] = 0;
-        // line 7
+        // line 15
         echo "     ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, 'images'));
         foreach ($context['_seq'] as $context['_key'] => $context['image']) {
-            // line 8
+            // line 16
             echo "        ";
             if ((!($this->getContext($context, 'i') % 4))) {
-                // line 9
+                // line 17
                 echo "          <div class=\"row ";
                 if ((!($this->getContext($context, 'i') % 8))) {
                     echo "odd";
@@ -71,7 +102,7 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
                 echo "\">
         ";
             }
-            // line 11
+            // line 19
             echo "              <div class=\"image ";
             if ((!($this->getContext($context, 'i') % 2))) {
                 echo "odd";
@@ -79,30 +110,50 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
                 echo "even";
             }
             echo "\">
-                <img src=\"";
-            // line 12
+                <a href=\"";
+            // line 20
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/content/images/" . $this->getContext($context, 'image')) . "-LARGE.png")), "html");
+            echo "\" class=\"image\">
+                  <img src=\"";
+            // line 21
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/content/images/" . $this->getContext($context, 'image')) . "-THUMB.png")), "html");
             echo "\" />
+                </a>
               </div>
         ";
-            // line 14
+            // line 24
             if ((($this->getContext($context, 'i') % 4) == 3)) {
-                // line 15
+                // line 25
                 echo "              <div class=\"cb\"></div>
           </div>
         ";
             }
-            // line 18
+            // line 28
             echo "        ";
             $context['i'] = (1 + $this->getContext($context, 'i'));
-            // line 19
+            // line 29
             echo "     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 20
+        // line 30
         echo " ";
+    }
+
+    // line 31
+    public function block_javascripts($context, array $blocks = array())
+    {
+        // line 32
+        echo "  ";
+        echo $this->renderParentBlock("javascripts", $context, $blocks);
+        echo "
+   <script type=\"text/javascript\">
+     \$(document).ready(function() {
+      \$(\"a.image\").fancybox();
+     });  
+   </script>
+";
     }
 
     public function getTemplateName()
