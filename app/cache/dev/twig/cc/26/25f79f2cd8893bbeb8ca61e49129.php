@@ -113,7 +113,9 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
                 <a href=\"";
             // line 20
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/content/images/" . $this->getContext($context, 'image')) . "-LARGE.png")), "html");
-            echo "\" class=\"image\">
+            echo "\" class=\"image\" title=\"";
+            echo twig_escape_filter($this->env, twig_strtr($this->getContext($context, 'image'), array("-" => " ")), "html");
+            echo "\">
                   <img src=\"";
             // line 21
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/content/images/" . $this->getContext($context, 'image')) . "-THUMB.png")), "html");
@@ -150,7 +152,9 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
         echo "
    <script type=\"text/javascript\">
      \$(document).ready(function() {
-      \$(\"a.image\").fancybox();
+      \$(\"a.image\").fancybox({
+        titleShow : true
+    });
      });  
    </script>
 ";
