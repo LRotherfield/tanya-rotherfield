@@ -3,16 +3,18 @@
   {{parent()}} - Gallery
 {% endblock %}
  {% block body %}
-     {% for i in 0..15 %}
+      {% set i = 0 %}
+     {% for image in images %}
         {% if not i % 4 %}
           <div class="row {% if not i % 8 %}odd{% else %}even{%endif%}">
         {% endif %}
               <div class="image {% if not i % 2 %}odd{% else %}even{%endif%}">
-                <img src="{% if not i % 2 %}{{ asset('bundles/content/images/bug-in-glass.png') }}{% else %}{{ asset('bundles/content/images/bug-house.png') }}{%endif%}" />
+                <img src="{{ asset('bundles/content/images/'~image~'-THUMB.png') }}" />
               </div>
         {% if i % 4 == 3 %}
               <div class="cb"></div>
           </div>
         {% endif %}
+        {% set i = 1+i %}
      {% endfor %}
  {% endblock %}

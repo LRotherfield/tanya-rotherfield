@@ -41,28 +41,41 @@ class __TwigTemplate_7a6269bc475707dff90eca0510361cf8 extends Twig_Template
         echo "    <link rel=\"shortcut icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html");
         echo "\" />
+    <script type=\"text/javascript\">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8515070-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
   </head>
   <body>   
     <div class=\"wrapper\">
       <div class=\"header\">
         <h1>
           ";
-        // line 18
+        // line 31
         $this->displayBlock('header_text', $context, $blocks);
-        // line 21
+        // line 34
         echo "        </h1>
       </div>
       ";
-        // line 23
+        // line 36
         $this->displayBlock('body', $context, $blocks);
-        // line 24
+        // line 37
         echo "        <div class=\"footer\">
           <a href=\"mailto:tanya@tanyarotherfield.co.uk\">Email Tanya</a>
         </div>
       ";
-        // line 27
+        // line 40
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 28
+        // line 41
         echo "    </div>
   </body>
 </html>
@@ -93,20 +106,20 @@ class __TwigTemplate_7a6269bc475707dff90eca0510361cf8 extends Twig_Template
         ";
     }
 
-    // line 18
+    // line 31
     public function block_header_text($context, array $blocks = array())
     {
-        // line 19
+        // line 32
         echo "             Tanya Rotherfield - Fine Art
           ";
     }
 
-    // line 23
+    // line 36
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 27
+    // line 40
     public function block_javascripts($context, array $blocks = array())
     {
     }

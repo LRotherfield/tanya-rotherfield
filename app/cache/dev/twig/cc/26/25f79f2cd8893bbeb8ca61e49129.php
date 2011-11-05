@@ -51,14 +51,17 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
     public function block_body($context, array $blocks = array())
     {
         // line 6
+        echo "      ";
+        $context['i'] = 0;
+        // line 7
         echo "     ";
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable(range(0, 15));
-        foreach ($context['_seq'] as $context['_key'] => $context['i']) {
-            // line 7
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, 'images'));
+        foreach ($context['_seq'] as $context['_key'] => $context['image']) {
+            // line 8
             echo "        ";
             if ((!($this->getContext($context, 'i') % 4))) {
-                // line 8
+                // line 9
                 echo "          <div class=\"row ";
                 if ((!($this->getContext($context, 'i') % 8))) {
                     echo "odd";
@@ -68,7 +71,7 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
                 echo "\">
         ";
             }
-            // line 10
+            // line 11
             echo "              <div class=\"image ";
             if ((!($this->getContext($context, 'i') % 2))) {
                 echo "odd";
@@ -77,29 +80,28 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
             }
             echo "\">
                 <img src=\"";
-            // line 11
-            if ((!($this->getContext($context, 'i') % 2))) {
-                echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/images/bug-in-glass.png"), "html");
-            } else {
-                echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/content/images/bug-house.png"), "html");
-            }
+            // line 12
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/content/images/" . $this->getContext($context, 'image')) . "-THUMB.png")), "html");
             echo "\" />
               </div>
         ";
-            // line 13
+            // line 14
             if ((($this->getContext($context, 'i') % 4) == 3)) {
-                // line 14
+                // line 15
                 echo "              <div class=\"cb\"></div>
           </div>
         ";
             }
-            // line 17
+            // line 18
+            echo "        ";
+            $context['i'] = (1 + $this->getContext($context, 'i'));
+            // line 19
             echo "     ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 18
+        // line 20
         echo " ";
     }
 
