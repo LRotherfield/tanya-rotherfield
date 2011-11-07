@@ -17,7 +17,7 @@
           <div class="row {% if not i % 8 %}odd{% else %}even{%endif%}">
         {% endif %}
               <div class="image {% if not i % 2 %}odd{% else %}even{%endif%}">
-                <a href="{{ asset('bundles/content/images/'~image~'-LARGE.png') }}" class="image" title="{{ image|replace({'-': ' '}) }}">
+                <a rel="gallery" href="{{ asset('bundles/content/images/'~image~'-LARGE.png') }}" class="image" title="{{ image|replace({'-': ' '}) }}">
                   <img src="{{ asset('bundles/content/images/'~image~'-THUMB.png') }}" />
                 </a>
               </div>
@@ -33,7 +33,8 @@
    <script type="text/javascript">
      $(document).ready(function() {
       $("a.image").fancybox({
-        titleShow : true
+        titleShow : true,
+        titlePosition: 'inside'
     });
      });  
    </script>

@@ -110,7 +110,7 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
                 echo "even";
             }
             echo "\">
-                <a href=\"";
+                <a rel=\"gallery\" href=\"";
             // line 20
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/content/images/" . $this->getContext($context, 'image')) . "-LARGE.png")), "html");
             echo "\" class=\"image\" title=\"";
@@ -153,7 +153,8 @@ class __TwigTemplate_cc2625f79f2cd8893bbeb8ca61e49129 extends Twig_Template
    <script type=\"text/javascript\">
      \$(document).ready(function() {
       \$(\"a.image\").fancybox({
-        titleShow : true
+        titleShow : true,
+        titlePosition: 'inside'
     });
      });  
    </script>
